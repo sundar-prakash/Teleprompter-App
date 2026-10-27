@@ -89,6 +89,16 @@ class TeleprompterSettingsPanel extends ConsumerWidget {
           onChanged: (v) =>
               up((x) => x.copyWith(secondsPerLine: (v * 10).round() / 10)),
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          child: Row(
+            children: [
+              Text('◀ faster', style: Theme.of(context).textTheme.labelSmall),
+              const Spacer(),
+              Text('slower ▶', style: Theme.of(context).textTheme.labelSmall),
+            ],
+          ),
+        ),
         Wrap(
           spacing: 8,
           children: [

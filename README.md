@@ -1,4 +1,6 @@
-# Teleprompter
+<p align="center"><img src="assets/logo.png" alt="Teleprompter logo" width="128"></p>
+
+<h1 align="center">Teleprompter</h1>
 
 **A free, open-source teleprompter for Android.** Import a script, read it in the pace you choose, record yourself with the front camera while reading, or keep the script floating over another app.
 

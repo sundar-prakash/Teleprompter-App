@@ -22,7 +22,25 @@ class HomeScreen extends ConsumerWidget {
             child: ListView(
               padding: const EdgeInsets.all(24),
               children: [
-                Text('Teleprompter', style: t.headlineMedium),
+                Row(
+                  children: [
+                    Image.asset(
+                      'assets/logo.png',
+                      width: 44,
+                      height: 44,
+                      semanticLabel: 'Teleprompter logo',
+                    ),
+                    const SizedBox(width: 12),
+                    Flexible(
+                      child: Text(
+                        'Teleprompter',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: t.headlineMedium,
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 20),
                 Wrap(
                   spacing: 12,

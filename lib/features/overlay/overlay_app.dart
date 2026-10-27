@@ -222,8 +222,8 @@ class _OverlayScreenState extends State<_OverlayScreen>
                     _pc.toggle,
                   ),
                   btn(Icons.replay, 'Restart', _pc.restart),
-                  btn(Icons.remove, 'Slower', () => _tweakSpeed(-10)),
-                  btn(Icons.add, 'Faster', () => _tweakSpeed(10)),
+                  btn(Icons.directions_walk, 'Slower', () => _tweakSpeed(-10)),
+                  btn(Icons.directions_run, 'Faster', () => _tweakSpeed(10)),
                   btn(Icons.text_decrease, 'Smaller text', () {
                     setState(
                       () => _fontScale = (_fontScale - 0.1).clamp(0.5, 2),

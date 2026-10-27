@@ -5,6 +5,7 @@ import '../../app/providers.dart';
 import '../../domain/models/teleprompter_settings.dart';
 import '../../domain/services/text_stats.dart';
 import 'playback_controller.dart';
+import 'speed_controls.dart';
 
 const modeLabels = {
   ReadingMode.continuous: 'Continuous',
@@ -213,27 +214,10 @@ class WorkspaceControls extends ConsumerWidget {
                             onPressed: pc.stop,
                           ),
                           const SizedBox(width: 12),
-                          IconButton(
-                            tooltip: 'Slower (more seconds per line)',
-                            icon: const Icon(Icons.remove),
-                            onPressed: () => speed(faster: false),
-                          ),
-                          SizedBox(
-                            width: 56,
-                            child: Text(
-                              '${s.secondsPerLine.toStringAsFixed(1)} s\nper line',
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 11,
-                                height: 1.1,
-                              ),
-                            ),
-                          ),
-                          IconButton(
-                            tooltip: 'Faster (fewer seconds per line)',
-                            icon: const Icon(Icons.add),
-                            onPressed: () => speed(faster: true),
+                          SpeedControls(
+                            secondsPerLine: s.secondsPerLine,
+                            onSlower: () => speed(faster: false),
+                            onFaster: () => speed(faster: true),
                           ),
                           PopupMenuButton<ReadingMode>(
                             tooltip: 'Reading mode',

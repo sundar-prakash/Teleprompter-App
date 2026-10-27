@@ -20,6 +20,7 @@ import '../../domain/services/text_stats.dart';
 import '../../platform/permissions.dart';
 import '../teleprompter/playback_controller.dart';
 import '../teleprompter/script_view.dart';
+import '../teleprompter/speed_controls.dart';
 import 'camera_settings_sheet.dart';
 
 enum _Rec { idle, countdown, recording, paused }
@@ -915,23 +916,10 @@ class _CameraScreenState extends ConsumerState<CameraScreen>
                       ),
                       onPressed: _pc.canAutoPlay ? _pc.toggle : null,
                     ),
-                    IconButton(
-                      tooltip: 'Slower',
-                      icon: const Icon(Icons.remove),
-                      onPressed: () => _adjustSpeed(faster: false),
-                    ),
-                    SizedBox(
-                      width: 64,
-                      child: Text(
-                        '${s.secondsPerLine.toStringAsFixed(1)} s/line',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 12),
-                      ),
-                    ),
-                    IconButton(
-                      tooltip: 'Faster',
-                      icon: const Icon(Icons.add),
-                      onPressed: () => _adjustSpeed(faster: true),
+                    SpeedControls(
+                      secondsPerLine: s.secondsPerLine,
+                      onSlower: () => _adjustSpeed(faster: false),
+                      onFaster: () => _adjustSpeed(faster: true),
                     ),
                   ],
                 ),
