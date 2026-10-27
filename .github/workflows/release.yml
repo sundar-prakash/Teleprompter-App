@@ -30,7 +30,7 @@ jobs:
       - run: flutter build apk --release --target-platform android-arm64
       - name: Name the artifact
         run: cp build/app/outputs/flutter-apk/app-release.apk "teleprompter-${GITHUB_REF_NAME}-arm64-v8a.apk"
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           files: teleprompter-*.apk
           generate_release_notes: true
