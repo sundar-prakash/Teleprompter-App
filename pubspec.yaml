@@ -46,7 +46,7 @@ dependencies:
   window_manager: ^0.5.2
   wakelock_plus: ^1.8.2
   equatable: ^3.0.0
-  pdfrx: ^2.10.1
+  pdfrx: ^2.11.0
   permission_handler: ^13.0.2
   camera: ^0.12.1
   video_player: ^2.14.1
