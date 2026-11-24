@@ -39,6 +39,12 @@ class HomeScreen extends ConsumerWidget {
                         style: t.headlineMedium,
                       ),
                     ),
+                    const Spacer(),
+                    IconButton(
+                      tooltip: 'About',
+                      icon: const Icon(Icons.info_outline),
+                      onPressed: () => context.push('/about'),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),

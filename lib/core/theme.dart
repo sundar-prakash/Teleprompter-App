@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
-const _accent = Color(0xFF4F8F7B);
+/// Brand violet from the logo gradient (cyan → blue → violet).
+const brandSeed = Color(0xFF7A5CFF);
+
+/// `fidelity` keeps the primary close to the vivid logo violet instead of a
+/// muted lavender.
+ColorScheme brandScheme(Brightness b) => ColorScheme.fromSeed(
+  seedColor: brandSeed,
+  brightness: b,
+  dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+);
 
 ThemeData buildTheme(Brightness b) {
-  final scheme = ColorScheme.fromSeed(seedColor: _accent, brightness: b);
+  final scheme = brandScheme(b);
   return ThemeData(
     colorScheme: scheme,
     useMaterial3: true,

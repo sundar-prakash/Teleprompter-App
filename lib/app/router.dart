@@ -9,6 +9,7 @@ import '../features/teleprompter/teleprompter_screen.dart';
 import '../data/importers/import_result.dart';
 import '../features/import/import_preview_screen.dart';
 import '../features/camera/camera_screen.dart';
+import '../features/about/about_screen.dart';
 import 'shell.dart';
 
 GoRouter buildRouter() => GoRouter(
@@ -48,6 +49,7 @@ GoRouter buildRouter() => GoRouter(
       path: '/camera/:id',
       builder: (_, st) => CameraScreen(scriptId: st.pathParameters['id']!),
     ),
+    GoRoute(path: '/about', builder: (_, _) => const AboutScreen()),
     GoRoute(
       path: '/play/:id',
       builder: (_, st) =>

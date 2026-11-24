@@ -19,7 +19,7 @@ val keyProps = Properties().apply {
 }
 
 android {
-    namespace = "com.teleprompter.app"
+    namespace = "in.sundarprakash.teleprompter"
     compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
@@ -29,7 +29,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.teleprompter.app"
+        applicationId = "in.sundarprakash.teleprompter"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -59,6 +59,9 @@ android {
                 signingConfigs.getByName("release")
             else
                 signingConfigs.getByName("debug")
+            // Ship native symbol tables inside the AAB so Play Console can
+            // symbolicate native crashes (and doesn't warn about missing symbols).
+            ndk { debugSymbolLevel = "SYMBOL_TABLE" }
         }
     }
 }
