@@ -1,0 +1,58 @@
+Look into the lens, not down at your notes. Teleprompter puts your script right where you need it, scrolling at exactly your pace, so every video, class, talk and call sounds natural and confident.
+
+Every feature is included. There are no ads, no subscriptions, no watermarks, no sign-up and no character limits. Nothing is locked behind a paywall.
+
+━━━━━━━━━━━━━━━━━━━━
+🎬 RECORD WHILE YOU READ
+• Live front-camera preview with your script on screen
+• Six script layouts to keep your eyes close to the lens
+• Countdown, record, pause and resume
+• Torch, camera switch, resolution and frame-rate control
+• Review each take, then save it to your gallery or share it
+
+🪟 FLOAT OVER ANY APP
+• A movable, resizable, see-through script window above video calls, slides or any camera app
+• Picture-in-picture with play, pause and speed controls
+
+📄 BRING ANY SCRIPT
+• Import PDF (with selectable text), Word (.docx), subtitles (.srt), text (.txt) and Markdown (.md)
+• Open files from your phone, Google Drive or any cloud storage app
+• Preview before saving; the original is always kept, so you can restore it
+• Library with search, sort, list or grid view, rename and duplicate
+• Word count, character count and estimated speaking time
+• Export or share any script
+
+🎚 FIVE READING MODES
+• Continuous: smooth, steady scrolling
+• Single line: one line at a time, so you never lose your place
+• Paragraph: paragraph by paragraph, with a hold time
+• Manual: you scroll, the text stays big and clear
+• Subtitle: follows SRT timestamps to the second
+
+🎨 MAKE IT YOURS: CUSTOMISE EVERYTHING
+• Font style, weight, italics and text size
+• Line height, letter spacing, paragraph spacing and alignment
+• Margins and reading width
+• Any text and background colour with the RGB colour picker
+• Reading-line marker, highlights and bookmarks
+• Pace set in seconds per line, so it stays steady when you resize text
+• Countdown, auto-pause and pinch-to-zoom
+• Mirror and vertical flip for beam-splitter (glass) teleprompter rigs
+• Right-to-left text support
+• Light, dark or system theme
+• Save complete setups as display profiles and switch in one tap
+
+🔒 PRIVATE BY DESIGN
+No account, no analytics, no tracking, and the app doesn't even request internet access. Camera, microphone and overlay permissions are asked for only when you use those features, with a clear explanation first. Your scripts and recordings stay on your phone.
+
+💙 OPEN SOURCE
+Teleprompter is open source under the MIT License, so anyone can see exactly how it works.
+
+Made for YouTubers, Reels and Shorts creators, teachers, students, speakers, presenters, news readers, podcasters and anyone who talks to a camera.
+
+━━━━━━━━━━━━━━━━━━━━
+Built by Sundar Prakash P, full stack & Flutter developer.
+Portfolio: https://sundarprakash.in
+GitHub: https://github.com/sundar-prakash
+Website: https://teleprompter.sundarprakash.in
+Support: support@sundarprakash.in

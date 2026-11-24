@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
 
+import '../../core/theme.dart';
 import '../../domain/models/teleprompter_settings.dart';
 import '../../platform/overlay_service.dart';
 import '../teleprompter/playback_controller.dart';
@@ -14,7 +15,7 @@ void runOverlayApp() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(useMaterial3: true),
+      theme: buildTheme(Brightness.dark),
       color: Colors.transparent,
       home: const _OverlayScreen(),
     ),

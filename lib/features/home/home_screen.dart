@@ -31,13 +31,18 @@ class HomeScreen extends ConsumerWidget {
                       semanticLabel: 'Teleprompter logo',
                     ),
                     const SizedBox(width: 12),
-                    Flexible(
+                    Expanded(
                       child: Text(
                         'Teleprompter',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: t.headlineMedium,
                       ),
+                    ),
+                    IconButton(
+                      tooltip: 'About',
+                      icon: const Icon(Icons.info_outline),
+                      onPressed: () => context.push('/about'),
                     ),
                   ],
                 ),

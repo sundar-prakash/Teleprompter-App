@@ -6,8 +6,10 @@ All notable changes are documented here. Format based on [Keep a Changelog](http
 
 ### Added
 - App logo: launcher icon (adaptive), Home screen and README.
+- About screen (Home and Settings › ⓘ): version, links to website, privacy policy, terms, source code, open-source licences, developer portfolio and GitHub, rate and share.
 
 ### Changed
+- Android package name is now `in.sundarprakash.teleprompter` (first Google Play release).
 - Pace controls are now explicit **Slower** / **Faster** buttons with the current seconds-per-line between them (previously +/- which moved the number the opposite way to the speed).
 - Settings slider shows "faster" and "slower" ends.
 

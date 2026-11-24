@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
+import '../../core/theme.dart';
 import '../../domain/models/teleprompter_settings.dart';
 import '../../domain/services/text_stats.dart';
 import 'playback_controller.dart';
@@ -70,12 +71,8 @@ class WorkspaceControls extends ConsumerWidget {
     const dim = TextStyle(color: Colors.white70, fontSize: 12);
 
     return Theme(
-      data: ThemeData.dark(useMaterial3: true).copyWith(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF4F8F7B),
-          brightness: Brightness.dark,
-        ),
-      ),
+      data: ThemeData.dark(useMaterial3: true)
+          .copyWith(colorScheme: brandScheme(Brightness.dark)),
       child: Column(
         children: [
           bar(

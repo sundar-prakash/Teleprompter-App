@@ -1,0 +1,9 @@
+<en-US>
+Welcome to Teleprompter 1.0.1, the first release on Google Play!
+• Import scripts from PDF, Word, SRT, TXT and Markdown
+• Five reading modes, with your pace set in seconds per line
+• Record yourself with the front camera while you read
+• Float your script over any app, or use picture-in-picture
+• Customise everything: fonts, spacing, colours, mirror/flip, display profiles
+Every feature is free. No ads, no sign-up, no tracking.
+</en-US>

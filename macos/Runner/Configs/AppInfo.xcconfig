@@ -8,7 +8,7 @@
 PRODUCT_NAME = teleprompter_pro
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.teleprompter.teleprompterPro
+PRODUCT_BUNDLE_IDENTIFIER = in.sundarprakash.teleprompter
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2026 com.teleprompter. All rights reserved.

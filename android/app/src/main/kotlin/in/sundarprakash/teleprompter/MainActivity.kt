@@ -1,4 +1,4 @@
-package com.teleprompter.app
+package `in`.sundarprakash.teleprompter
 
 import android.app.PendingIntent
 import android.app.PictureInPictureParams
@@ -22,7 +22,7 @@ import io.flutter.plugin.common.MethodChannel
  */
 class MainActivity : FlutterActivity() {
     private val channelName = "teleprompter/pip"
-    private val actionName = "com.teleprompter.app.PIP_ACTION"
+    private val actionName = "in.sundarprakash.teleprompter.PIP_ACTION"
     private var channel: MethodChannel? = null
     private var autoEnter = false
     private var playing = false
