@@ -31,7 +31,7 @@ class HomeScreen extends ConsumerWidget {
                       semanticLabel: 'Teleprompter logo',
                     ),
                     const SizedBox(width: 12),
-                    Flexible(
+                    Expanded(
                       child: Text(
                         'Teleprompter',
                         maxLines: 1,
@@ -39,7 +39,6 @@ class HomeScreen extends ConsumerWidget {
                         style: t.headlineMedium,
                       ),
                     ),
-                    const Spacer(),
                     IconButton(
                       tooltip: 'About',
                       icon: const Icon(Icons.info_outline),

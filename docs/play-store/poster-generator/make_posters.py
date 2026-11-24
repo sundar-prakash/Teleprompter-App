@@ -5,14 +5,14 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 os.makedirs(OUT, exist_ok=True)
 
 slides = [
-  ("01-prompter", "5.jpg", "Free · No ads", "Read your script.<br><g>Look at the camera.</g>", "Big, smooth text that scrolls at exactly your pace."),
-  ("02-customise", "7.jpg", "Make it yours", "Customise<br><g>every detail</g>", "Size, weight, spacing, alignment and width, with every option free."),
-  ("03-colours", "6.jpg", "Your look, your rig", "Any colour.<br><g>Any setup.</g>", "Colour presets or your own · Mirror &amp; flip for glass rigs · Picture-in-picture"),
+  ("01-prompter", "6.jpg", "Free · No ads", "Read your script.<br><g>Look at the camera.</g>", "Big, smooth text that scrolls at exactly your pace."),
+  ("02-customise", "9.jpg", "Make it yours", "Customise<br><g>every detail</g>", "Size, weight, spacing, alignment and width, with every option free."),
+  ("03-colours", "8.jpg", "Your look, your rig", "Any colour.<br><g>Any setup.</g>", "Colour presets or your own · Mirror &amp; flip for glass rigs · Picture-in-picture"),
   ("04-included", None, "Everything included", "Free. No ads.<br><g>Nothing locked.</g>", ""),
-  ("05-modes", "3.jpg", "Five reading modes", "Your mode.<br><g>Your pace.</g>", "Continuous, single line, paragraph, manual and subtitle, with speed set in seconds per line."),
-  ("06-import", "1.jpg", "Get started in seconds", "Type it or<br><g>import it</g>", "PDF · Word · SRT · TXT · Markdown"),
-  ("07-editor", "4.jpg", "Built-in editor", "Write, edit,<br><g>and time it</g>", "Live word count, characters and speaking-time estimate."),
-  ("08-library", "2.jpg", "Script library", "Every script,<br><g>organised</g>", "Search, sort, list or grid view, rename and duplicate."),
+  ("05-focus", "7.jpg", "Distraction-free", "Big text.<br><g>Zero clutter.</g>", "Controls fade away while you read, so it's just you and your words."),
+  ("06-modes", "3.jpg", "Five reading modes", "Your mode.<br><g>Your pace.</g>", "Continuous, single line, paragraph, manual and subtitle, with speed set in seconds per line."),
+  ("07-editor", "5.jpg", "Import or write", "Bring any script.<br><g>Time it.</g>", "Import PDF, Word, SRT, TXT or Markdown, then edit with live word count and speaking time."),
+  ("08-about", "4.jpg", "Open source", "Made with care.<br><g>Free forever.</g>", "No subscriptions, no sign-up, no tracking. MIT licensed."),
 ]
 
 CSS = """

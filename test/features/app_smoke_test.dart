@@ -37,6 +37,16 @@ Future<void> _pumpApp(WidgetTester t, Size size, _MemRepo repo) async {
 }
 
 void main() {
+  testWidgets('home title gets all the free width beside the About button', (
+    t,
+  ) async {
+    await _pumpApp(t, const Size(360, 780), _MemRepo());
+    // 360 - 2x24 padding - 44 logo - 12 gap - 48 About button = 208.
+    // (A Spacer next to the title used to take half of this and truncate it.)
+    expect(t.getSize(find.text('Teleprompter')).width, closeTo(208, 1));
+    expect(find.byTooltip('About'), findsOneWidget);
+  });
+
   testWidgets(
     'compact layout uses a bottom bar; create, edit, open workspace',
     (t) async {
