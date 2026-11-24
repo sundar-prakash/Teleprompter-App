@@ -68,6 +68,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
       );
     }
     final stats = TextStats.of(_body.text);
+    Future<void> present() async {
+      await _flush();
+      if (context.mounted) context.push('/play/${widget.scriptId}');
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: TextField(
@@ -92,14 +97,18 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             ),
           Padding(
             padding: const EdgeInsets.only(right: 8),
-            child: FilledButton.icon(
-              icon: const Icon(Icons.play_arrow),
-              label: const Text('Present'),
-              onPressed: () async {
-                await _flush();
-                if (context.mounted) context.push('/play/${widget.scriptId}');
-              },
-            ),
+            // Icon-only on narrow phones so the title has room.
+            child: MediaQuery.sizeOf(context).width < 380
+                ? IconButton.filled(
+                    tooltip: 'Present',
+                    icon: const Icon(Icons.play_arrow),
+                    onPressed: present,
+                  )
+                : FilledButton.icon(
+                    icon: const Icon(Icons.play_arrow),
+                    label: const Text('Present'),
+                    onPressed: present,
+                  ),
           ),
         ],
       ),

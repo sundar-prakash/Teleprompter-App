@@ -43,16 +43,33 @@ class WorkspaceControls extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final s = ref.watch(settingsProvider);
-    Widget bar(Widget child, {required bool top}) => DecoratedBox(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: top ? Alignment.topCenter : Alignment.bottomCenter,
-          end: top ? Alignment.bottomCenter : Alignment.topCenter,
-          colors: [Colors.black.withValues(alpha: 0.78), Colors.transparent],
+    // A solid panel behind the controls, with the fade *outside* it, so the
+    // script never shows through buttons and labels.
+    const panel = Colors.black;
+    Widget bar(Widget child, {required bool top}) {
+      final fade = Container(
+        height: 28,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: top ? Alignment.topCenter : Alignment.bottomCenter,
+            end: top ? Alignment.bottomCenter : Alignment.topCenter,
+            colors: const [panel, Colors.transparent],
+          ),
         ),
-      ),
-      child: SafeArea(child: child),
-    );
+      );
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (!top) IgnorePointer(child: fade),
+          ColoredBox(
+            color: panel,
+            child: SafeArea(top: top, bottom: !top, child: child),
+          ),
+          if (top) IgnorePointer(child: fade),
+        ],
+      );
+    }
+
     void speed({required bool faster}) {
       ref
           .read(settingsProvider.notifier)

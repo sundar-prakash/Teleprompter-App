@@ -5,8 +5,8 @@ Everything you need to fill in Play Console for the first release, in the order 
 | | |
 |---|---|
 | Package name | `in.sundarprakash.teleprompter` (permanent once uploaded) |
-| Version | 1.0.1 (version code 2) |
-| AAB | `dist/teleprompter-1.0.1-2.aab` (signed with the upload key) |
+| Version | 1.0.2 (version code 3) |
+| AAB | `dist/teleprompter-1.0.2-3.aab` (signed with the upload key) |
 | Upload key | `~/AndroidKeys/teleprompter-upload.jks` (alias `upload`), password in `~/AndroidKeys/teleprompter-key.properties` |
 | Upload cert SHA-256 | `5B:AA:00:07:5D:20:43:43:99:63:5E:EC:97:46:73:3B:C6:E8:64:67:93:45:06:47:4B:41:9C:DE:65:2E:49:7D` |
 | Website | https://teleprompter.sundarprakash.in |
@@ -135,7 +135,7 @@ The floating overlay runs a `specialUse` foreground service, so Play asks you to
 2. Testing track:
    - **Personal account (new):** *Testing → Closed testing → Create track* → add an email list of 12+ testers → upload the AAB → roll out. Share the opt-in link; wait 14 days with 12+ testers opted in → *Dashboard → Apply for production*.
    - **Organisation account:** you can go straight to *Production* (an internal test with your own device first is still a good idea).
-3. Upload `dist/teleprompter-1.0.1-2.aab`.
+3. Upload `dist/teleprompter-1.0.2-3.aab`.
 4. Release name: `1.0.1`
 5. Release notes (en-US, max 500):
    ```
@@ -152,7 +152,7 @@ The floating overlay runs a `specialUse` foreground service, so Play asks you to
 
 ### Debug symbols
 - Native symbols are already **inside the AAB**, so Play won't warn about them.
-- Dart code is obfuscated. Keep `dist/teleprompter-1.0.1-2-dart-symbols.zip` to decode Dart stack traces later (`flutter symbolize -i <trace> -d app.android-arm64.symbols`). Don't upload it to Play.
+- Dart code is obfuscated. Keep `dist/teleprompter-1.0.2-3-dart-symbols.zip` to decode Dart stack traces later (`flutter symbolize -i <trace> -d app.android-arm64.symbols`). Don't upload it to Play.
 
 ## 5. Future updates
 
