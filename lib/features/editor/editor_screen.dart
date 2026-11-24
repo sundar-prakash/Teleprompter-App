@@ -97,18 +97,11 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
             ),
           Padding(
             padding: const EdgeInsets.only(right: 8),
-            // Icon-only on narrow phones so the title has room.
-            child: MediaQuery.sizeOf(context).width < 380
-                ? IconButton.filled(
-                    tooltip: 'Present',
-                    icon: const Icon(Icons.play_arrow),
-                    onPressed: present,
-                  )
-                : FilledButton.icon(
-                    icon: const Icon(Icons.play_arrow),
-                    label: const Text('Present'),
-                    onPressed: present,
-                  ),
+            child: FilledButton.icon(
+              icon: const Icon(Icons.play_arrow),
+              label: const Text('Present'),
+              onPressed: present,
+            ),
           ),
         ],
       ),
