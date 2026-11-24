@@ -2,6 +2,18 @@
 
 All notable changes are documented here. Format based on [Keep a Changelog](https://keepachangelog.com/), versioning follows [SemVer](https://semver.org/).
 
+## [1.0.2] - 2026-11-25
+
+### Fixed
+- Floating window no longer gets stuck on "Loading script…": the app now sends the script to the window directly instead of waiting for a reply that the overlay plugin could misroute.
+- Floating window opens at its intended size on high-density screens (it opened about a third of the size, squeezing the controls and script).
+- Floating window controls are one fixed row (play and close always visible, the rest scrolls), so they never overflow or cover the script; shows a clear message if the script can't load.
+- Reading position from the floating window is restored when you return to the app.
+- Prompter: controls sit on a solid panel, so the script no longer shows through the progress bar and buttons.
+- Import preview: buttons and options no longer overflow on small phones, with large system text or with the keyboard open.
+- Editor: long titles get more room on narrow phones (Present becomes an icon button).
+- Home: title no longer truncated next to the About button.
+
 ## [1.0.1] - 2026-10-27
 
 ### Added

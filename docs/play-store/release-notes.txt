@@ -1,9 +1,9 @@
 <en-US>
-Welcome to Teleprompter 1.0.1, the first release on Google Play!
-• Import scripts from PDF, Word, SRT, TXT and Markdown
-• Five reading modes, with your pace set in seconds per line
-• Record yourself with the front camera while you read
-• Float your script over any app, or use picture-in-picture
-• Customise everything: fonts, spacing, colours, mirror/flip, display profiles
+Teleprompter 1.0.2: smoother floating script and polish.
+• Floating window opens instantly at the right size, no more "Loading script…"
+• Floating controls fit in one row; play and close are always in reach
+• Your reading position carries back from the floating window to the app
+• Cleaner prompter controls: script no longer shows through the buttons
+• Fixed text overflowing on small phones and with large system text
 Every feature is free. No ads, no sign-up, no tracking.
 </en-US>

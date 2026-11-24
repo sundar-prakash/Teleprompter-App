@@ -49,77 +49,94 @@ class _ImportPreviewScreenState extends ConsumerState<ImportPreviewScreen> {
     final paragraphs = splitParagraphs(r.text);
     return Scaffold(
       appBar: AppBar(title: const Text('Preview import')),
+      // Header and preview scroll together, so the screen still fits on
+      // small phones, with large system text, or with the keyboard open.
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                TextField(
-                  controller: _title,
-                  decoration: const InputDecoration(labelText: 'Script title'),
-                ),
-                const SizedBox(height: 8),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    '${r.fileName} · ${r.format.name.toUpperCase()} · ${stats.words} words · ~${formatDuration(stats.estimatedDuration())}',
-                    style: Theme.of(context).textTheme.labelMedium,
+          Expanded(
+            child: CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.all(16),
+                  sliver: SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        TextField(
+                          controller: _title,
+                          decoration: const InputDecoration(
+                            labelText: 'Script title',
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '${r.fileName} · ${r.format.name.toUpperCase()} · ${stats.words} words · ~${formatDuration(stats.estimatedDuration())}',
+                            style: Theme.of(context).textTheme.labelMedium,
+                          ),
+                        ),
+                        for (final w in r.warnings)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              w,
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.error,
+                              ),
+                            ),
+                          ),
+                        if (r.format == SourceFormat.srt)
+                          SwitchListTile(
+                            contentPadding: EdgeInsets.zero,
+                            title: const Text('Keep subtitle timing'),
+                            subtitle: const Text(
+                              'Off: plain continuous script. On: also enables Subtitle mode, which shows each line at its timestamp.',
+                            ),
+                            value: _keepTiming,
+                            onChanged: (v) => setState(() => _keepTiming = v),
+                          ),
+                      ],
+                    ),
                   ),
                 ),
-                for (final w in r.warnings)
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      w,
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.error,
+                const SliverToBoxAdapter(child: Divider()),
+                SliverPadding(
+                  padding: const EdgeInsets.all(16),
+                  sliver: SliverList.builder(
+                    itemCount: paragraphs.length,
+                    itemBuilder: (_, i) => Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Text(
+                        paragraphs[i],
+                        style: const TextStyle(fontSize: 16, height: 1.5),
                       ),
                     ),
                   ),
-                if (r.format == SourceFormat.srt)
-                  SwitchListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: const Text('Keep subtitle timing'),
-                    subtitle: const Text(
-                      'Off: plain continuous script. On: also enables Subtitle mode, which shows each line at its timestamp.',
-                    ),
-                    value: _keepTiming,
-                    onChanged: (v) => setState(() => _keepTiming = v),
-                  ),
-              ],
-            ),
-          ),
-          const Divider(),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: paragraphs.length,
-              itemBuilder: (_, i) => Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: Text(
-                  paragraphs[i],
-                  style: const TextStyle(fontSize: 16, height: 1.5),
                 ),
-              ),
+              ],
             ),
           ),
           const Divider(),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(12),
-              child: Row(
+              // One row when it fits; stacked (primary on top) on narrow
+              // screens or with large system text.
+              child: OverflowBar(
+                alignment: MainAxisAlignment.end,
+                overflowAlignment: OverflowBarAlignment.end,
+                overflowDirection: VerticalDirection.up,
+                spacing: 8,
+                overflowSpacing: 8,
                 children: [
                   TextButton(
                     onPressed: _saving ? null : () => context.pop(),
                     child: const Text('Cancel'),
                   ),
-                  const Spacer(),
                   OutlinedButton(
                     onPressed: _saving ? null : () => _save(present: false),
                     child: const Text('Save & edit'),
                   ),
-                  const SizedBox(width: 8),
                   FilledButton(
                     onPressed: _saving ? null : () => _save(present: true),
                     child: const Text('Save & present'),
